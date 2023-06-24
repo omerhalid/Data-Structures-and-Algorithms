@@ -1,18 +1,18 @@
-# This is a sample Python script.
+def linear_search(list, target):
+    for num in range(0, len(list)):
+        if target == list[num]:
+            return num
+    return None
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+list = [1,2,3,4,5,6]
+target = 3
 
+result = linear_search(list, target)
 
-def bineary():
-    print("is it bigger than 10?")
-    answer = input()
-    print(answer)
+def verify(index):
+    if index is not None:
+        print(f"Target found at index: {index}")
+    else:
+        print("Target is not found in the list!")
 
-    if answer == 'yes':
-        print("Is it bigger than 50?")
-        answer = input()
-        print(answer)
-
-
-bineary()
+verify(result)

@@ -1,4 +1,4 @@
-# Python-DSA-and-Interview-Prep**
+# Python-DSA-and-Interview-Prep
 
 This repository, Python-DSA-and-Interview-Prep, is your one-stop shop for everything you need to prepare for software developer interviews. It contains a comprehensive collection of data structures and algorithms implemented in Python, as well as a library of common interview questions and their detailed solutions. All code is meticulously commented and includes comprehensive explanations, making it an excellent resource for learners and practitioners alike.
 Features
@@ -15,7 +15,7 @@ Feel free to clone this repository or download the files for offline use:
 
 bash
 
-git clone https://github.com/your_username/Python-DSA-and-Interview-Prep.git
+git clone https://github.com/your_username/dataStructuresAlgorithms.git
 
 You can also contribute to this repository by submitting pull requests. Please ensure that your code is clean, commented, and accompanied by an explanation of the solution.
 Table of Contents

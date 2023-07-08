@@ -1,6 +1,6 @@
 # Python-DSA-and-Interview-Prep
 
-This repository, Python-DSA-and-Interview-Prep, is your one-stop shop for everything you need to prepare for software developer interviews. It contains a comprehensive collection of data structures and algorithms implemented in Python, as well as a library of common interview questions and their detailed solutions. .
+This repository, Python-DSA-and-Interview-Prep, is your one-stop shop for everything you need to prepare for software developer interviews. It contains a comprehensive collection of data structures and algorithms implemented in Python, as well as a library of common interview questions and their detailed solutions.
 Features:
 
     Data Structures: Understand the fundamentals of computer science and how to organize data efficiently. This section includes but is not limited to arrays, linked lists, stacks, queues, trees, and hash tables.

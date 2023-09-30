@@ -1,35 +1,61 @@
-# Python-DSA-and-Interview-Prep
+# Python Algorithms & Data Structures Repository
 
-This repository, Python-DSA-and-Interview-Prep, is your one-stop shop for everything you need to prepare for software developer interviews. It contains a comprehensive collection of data structures and algorithms implemented in Python, as well as a library of common interview questions and their detailed solutions.
-Features:
+This repository contains various algorithm and data structure implementations in Python.
 
-    Data Structures: Understand the fundamentals of computer science and how to organize data efficiently. This section includes but is not limited to arrays, linked lists, stacks, queues, trees, and hash tables.
+## Table of Contents
 
-    Algorithms: Master a wide array of computer science algorithms, from sorting and searching algorithms to dynamic programming and graph algorithms.
+- [Stock Timing](#stock-timing)
+- [Search Algorithms](#search-algorithms)
+- [HackerRank Challenges](#hackerrank-challenges)
+- [Linked List](#linked-list)
+- [String Manipulations](#string-manipulations)
+- [Array Operations](#array-operations)
 
-    Interview Questions: Practice with real-world interview questions from top tech companies. Each question includes a detailed solution and explanation to help you understand the approach.
+## Stock Timing
 
-How to Use This Repository
+- **File**: `bestAndWorstTimeStock.py`
+- **Description**: Determine the best and worst times to buy and sell stock.
+- **Last Update**: July 9, 2023
 
-Feel free to clone this repository or download the files for offline use:
+## Search Algorithms
 
-bash
+- **Files**:
+  - `binarySearch.py`: Implement a basic binary search. (Note: Returns none)
+  - `linearSearch.py`: Linear search algorithm. Also added a binary search implementation in this file.
+  - `recursiveBinarySearch.py`: Recursive approach for binary search.
+- **Last Update**: June 29, 2023
 
-git clone https://github.com/your_username/dataStructuresAlgorithms.git
+## HackerRank Challenges
 
-You can also contribute to this repository by submitting pull requests. Please ensure that your code is clean, commented, and accompanied by an explanation of the solution.
-Table of Contents
+- **File**: `hackerRank_minsum_maxsum.py`
+- **Description**: Solutions to specific HackerRank challenges.
+- **Last Update**: September 3, 2023
 
-    Data Structures
-    Algorithms
-    Interview Questions
+## Linked List
 
-Contributing
+- **Files**:
+  - `linkedList.py`: Basic operations in a linked list.
+  - `reverseLinkedList.py`: Method to reverse a linked list.
+- **Last Update**: July 12, 2023
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated. Follow the steps below to contribute:
+## String Manipulations
 
-    Fork the Project
-    Create your Feature Branch (git checkout -b feature/YourFeature)
-    Commit your Changes (git commit -m 'Add some YourFeature')
-    Push to the Branch (git push origin feature/YourFeature)
-    Open a Pull Request
+- **Files**:
+  - `longestCommonPrefix.py`: Find the longest common prefix string amongst an array of strings.
+  - `validAnagram.py`: Determine if two strings are anagrams.
+  - `validAnagram2`: Another method to determine if two strings are anagrams.
+  - `validPalindrome.py`: Check if a given string is a valid palindrome.
+  - `validParentheses.py`: Validate if a string contains valid open and close parentheses.
+- **Last Update**: July 12, 2023
+
+## Array Operations
+
+- **Files**:
+  - `removeDuplicates.py`: Remove duplicates from a sorted array.
+  - `twoSum.py`: Given an array of integers, find two numbers such that they add up to a specific target.
+- **Last Update**: July 12, 2023
+
+## Contributions
+
+Feel free to fork, raise issues, and submit Pull Requests. Your contributions are always welcome!
+

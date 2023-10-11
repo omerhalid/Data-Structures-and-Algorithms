@@ -1,0 +1,26 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution(object):
+    def isValidBST(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        return self.isBstUtil(root, float('-inf'), float('inf'))    
+    
+    # we will use recursion
+    def isBstUtil(self, root, min, max):
+        if root == None:
+            return True
+
+        # Check if root's value is within the boundaries
+        if not (min < root.val < max):
+            return False
+
+        # Check left and right subtrees
+        return self.isBstUtil(root.left, min, root.val) and self.isBstUtil(root.right, root.val, max)

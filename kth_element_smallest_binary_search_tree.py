@@ -17,7 +17,9 @@ Step-by-step guide to solving the "kth Smallest Element in a BST" problem using 
     - Start with the `current` node set to the BST's root.
 
 2. Traverse to the Leftmost Node:
-    - As long as `current` is not null, push it onto the `stack` and move `current` to its left child.
+    - As long as `current` is not null, push it onto the `stack` and move `current` to its left child. 
+      There will be two while loops nested in this step. (while current is not null or while stack is not empty)
+                                                            and while current is not null)
       This step ensures we first visit the smallest values.
 
 3. Process the Current Node:
@@ -54,7 +56,7 @@ class Solution:
 
         current = root
 
-        while current != None and stack: #while current is not null and stack is not empty
+        while current != None or stack: #while current is not null and stack is not empty
             while current != None:
                 stack.append(current)
                 current = current.left

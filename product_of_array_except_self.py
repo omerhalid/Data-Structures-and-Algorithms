@@ -2,8 +2,23 @@
 #Link: https://leetcode.com/problems/product-of-array-except-self/
 
 #High level solution for the below code using postfix and prefix products:
-# 1. Create an array of the same length as nums
-# 2. Iterate through nums and set the current index to the product of all elements before it
-# 3. Iterate through nums backwards and set the current index to the product of all elements after it
-# 4. Return the array
 
+
+def productExceptSelf(nums):
+    
+    answers = [1] * len(nums)
+    
+    prefix = 1
+    
+    for i in range(len(nums)):
+        answers[i] = prefix
+        prefix *= nums[i]
+    
+    postfix = 1
+    
+    for i in range(len(nums) - 1, -1, -1):
+        answers[i] *= postfix # we are multiplying the current answer(prefix values) by the postfix product
+        postfix *= nums[i]
+    
+    return answers
+    

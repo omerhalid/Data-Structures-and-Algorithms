@@ -1,23 +1,27 @@
-class Solution:
-    def maxProfit(self, prices) -> int:
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
 
-        #2 ptr solution
-        # Time: O(n)
-        # Space: O(1)
-        
-        l, r = 0, 1
-        max_profit = 0
-        
-        while r < len(prices):
-            if prices[l] < prices[r]:
-                current_profit = prices[r] - prices[l]
-                max_profit = max(max_profit, current_profit)
+        #prices : list
+
+
+        left = 0
+        right = 1
+        profit = 0
+
+        while right < len(prices):
+
+            if prices[left] > prices[right]:
+                left = right
+                right += 1
+
             else:
-                l = r
-            r += 1
-        return max_profit
-    
-sol = Solution()
-result = sol.maxProfit([7,1,5,3,6,4])
-print(result)
-                 
+                if prices[right] - prices[left] > profit:
+                    profit = prices[right] - prices[left]
+
+            right += 1
+            
+        return profit

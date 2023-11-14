@@ -1,6 +1,25 @@
 #Length of longest substring without repeating characters
 #Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
+
+#  function lengthOfLongestSubstring(s)
+#     Initialize a set 'windowChars' to keep track of the characters in the current window
+#     Initialize 'left' to 0 (start of the current window)
+#     Initialize 'maxLength' to 0 (length of the longest substring found so far)
+#     Initialize 'right' to 0 (end of the current window)
+
+#     while right is less than the length of s
+#         if s[right] is not in 'windowChars'
+#             Add s[right] to 'windowChars'
+#             Increment 'right' by 1
+#             'maxLength' = max('maxLength', 'right' - 'left')
+#         else
+#             Remove s[left] from 'windowChars'
+#             Increment 'left' by 1
+
+#     return 'maxLength'
+
+
 #High level solution for the below problem:
 #1. Use a set to store the characters
 #2. Use a left pointer and a right pointer

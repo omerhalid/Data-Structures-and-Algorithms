@@ -1,3 +1,14 @@
+# Valid Palindrome
+# Link: https://leetcode.com/problems/valid-palindrome/
+
+# High level solution for the below problem:
+# 1. Create a new string with only alphanumeric characters. Use isalnum() method
+# 2. Compare the new string with its reverse
+# 3. If they are equal, return True
+# 4. Else, return False
+
+
+
 class Solution(object):
     def isPalindrome(self, s):
         """

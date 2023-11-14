@@ -17,14 +17,19 @@
 #Time Complexity: O(n^2)
 #Space Complexity: O(n)
 
-#High Level Solution:
-#Sort the array
-#For each element in the array, use two pointers to find the other two elements that sum to 0
-#If the sum is 0, add the three elements to the result list
-#If the sum is greater than 0, decrement the second pointer
-#If the sum is less than 0, increment the first pointer
-
-#Solution:
+#High Level Solution for the below code:
+#1. Create a list and Sort the array
+#2. Iterate through the array using enumerate
+#3. If the number is the same as the previous number, continue
+#4. Set left pointer to index + 1
+#5. Set right pointer to last index
+#6. While left < right
+#7. If the sum of the three numbers is less than 0, increment left pointer
+#8. If the sum of the three numbers is greater than 0, decrement right pointer
+#9. If the sum of the three numbers is equal to 0, append to result
+#10. Increment left pointer
+#11. While the left pointer is the same as the previous number, increment left pointer
+#12. Return result
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:

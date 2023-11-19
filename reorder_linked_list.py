@@ -29,44 +29,47 @@
 #First pointer: 1
 #last pointer: 5
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 class Solution:
     def reorderList(self, head: ListNode):
+        
+        # we will use fast and slow pointer to find the middle of the linked list
+
+        #it is the combination of reversing a list and merging two lists
+
         slow = head
         fast = head.next
-        
-        while fast != None and fast.next != None: # we want to stop at the middle of the linked list
-            slow = slow.next #shift by 1 node
-            fast = fast.next.next #shift by 2 nodes
-        
-        #Now slow is at the middle of the linked list
-        second_half_head = slow.next #second half of the linked list
-        slow.next = None #break the linked list into 2 halves
-        prev = None #prev is the head of the reversed second half of the linked list
-        
-        #We want to reverse the second half of the linked list
-        while second_half_head != None:
-            tmp = second_half_head.next #store the next node of the second half of the linked list
-            second_half_head.next = prev #reverse the second half of the linked list
-            prev = second_half_head #shift prev by 1 node
-            second_half_head = tmp #shift second_half_head by 1 node
-            
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next # shift by 2
+
+        second = slow.next
+        slow.next = None
+        prev = None # prev is the head of the reversed second half of the linked list
+
+        #reversing the second half
+        while second:
+            tmp = second.next
+            second.next = prev
+            prev = second
+            second = tmp
         
         #merge the first half and the reversed second half
-        first_half_head = head
-        second_half_head = prev #prev is the head of the reversed second half of the linked list
-        
-        #continue until one of the linked lists is empty
-        while second_half_head != None:
-            temp1 = first_half_head.next #store the next node of the first half of the linked list
-            temp2 = second_half_head.next #store the next node of the second half of the linked list
-            
-            first_half_head.next = second_half_head #merge the first half and the reversed second half
-            second_half_head.next = temp1 #merge the first half and the reversed second half
-            
-            first_half_head = temp1 #shift first_half_head by 1 node
-            second_half_head = temp2 #shift second_half_head by 1 node
+
+        first = head
+        second = prev
+
+        while second:
+            temp1 = first.next # store the links because we will breake it
+            temp2 = second.next
+
+            first.next = second
+            second.next = temp1
+
+            first = temp1 # shift the first head by 1 node
+            second = temp2 # shift the second head by 1 node

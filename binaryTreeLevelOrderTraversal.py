@@ -19,7 +19,8 @@
     # Return Result
     #     Finally, return the result list containing the level order traversal.
 
-
+#Time Complexity: O(N) where N is the number of nodes in the tree
+#Space Complexity: O(N) where N is the number of nodes in the tree
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -27,33 +28,27 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import collections
+
+
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         
-        if root == None:
-            return []
-
-        result = []
-
-        queue = deque([root])
-
-        while(queue):
-
-            current_level = []
-
-            level_size = len(queue)
-
-            for i in range(level_size): 
-
-                current = queue.popleft()
-                current_level.append(current.val)
-
-                if current.left != None:
-                    queue.append(current.left)
-                if current.right != None:
-                    queue.append(current.right)
-            
-            if current_level:
-                result.append(current_level)
+        res = []
         
-        return result
+        q = collections.deque()
+        q.append(root)
+        
+        while q:
+            current_level = []
+            level_size = len(q)
+            
+            for i in range(level_size):
+                current = q.popleft()
+                if current:
+                    current_level.append(current.val)
+                    q.append(current.left)
+                    q.append(current.right)
+            if current_level:
+                res.append(current_level)
+        return res

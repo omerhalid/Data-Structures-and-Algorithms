@@ -35,6 +35,12 @@ class Stack:
             print(f"-----> {temp.data}")
             temp = temp.next
 
+    def isEmpty(self):
+        if self.head:
+            return False
+        else:
+            return True
+
 
 stack = Stack()
 stack.push(2)
@@ -45,3 +51,4 @@ stack.printStack()
 print(f"head:{stack.peek()}")
 stack.pop()
 stack.printStack()
+print(f"Is empty? {stack.isEmpty()}")

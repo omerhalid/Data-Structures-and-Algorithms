@@ -1,97 +1,50 @@
+# linked list stack
+
+
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
 
-class LinkedList:
+class Stack:  # FILO
     def __init__(self):
         self.head = None
 
-    def count(self):
-        count = 0
-        temp = self.head
-        while temp != None:
-            count += 1
-            temp = temp.next
-
-        return count
-
-    def add_beginning(self, data):
+    def push(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
 
-    def print(self):
-        current = self.head
-        while current:
-            print(f"----> {current.data}")
-            current = current.next
-
-    def insert_end(self, data):
-        new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
+    def pop(self):
+        if self.head == None:
+            raise Exception("Stack is empty")
         else:
-            temp = self.head
-            while temp.next != None:
-                temp = temp.next
-            temp.next = new_node
-
-    def insert_list(self, testList):
-        self.head = None
-        for node in testList:
-            self.insert_end(node)
-
-    def delete_head(self):
-        if self.head != None:
+            temp = self.head.data
             self.head = self.head.next
+        return temp
 
-    def remove_at(self, index):
-        if index == 0:
-            self.delete_head()
+    def peek(self):
+        if self.head == None:
+            raise Exception("Stack is empty")
+        else:
+            return self.head.data
+
+    def print(self):
+        if self.head == None:
+            raise Exception("Stack is empty")
         else:
             temp = self.head
-            for _ in range(index - 1):
-                if temp is None:
-                    return
+            while temp != None:
+                print(f"---->: {temp.data}")
                 temp = temp.next
-            if temp.next is None:
-                return
-            temp.next = temp.next.next
-
-    def insert_at(self, data, index):
-        new_node = Node(data)
-        if index == 0:
-            self.add_beginning(data)
-        else:
-            temp = self.head
-            for _ in range(index - 1):
-                if temp is None:
-                    return
-                temp = temp.next
-            if temp.next is None:
-                return
-            new_node.next = temp.next
-            temp.next = new_node
 
 
-testList = ["omer", "hale", "ali", "fatma", "ankara"]
-
-linkedList = LinkedList()
-
-linkedList.insert_list(testList)
-
-linkedList.print()
-print(f"The count: {linkedList.count()}")
-linkedList.delete_head()
-
-print("--------------")
-linkedList.print()
-print(f"The count: {linkedList.count()}")
-print("------------------")
-linkedList.remove_at(1)
-linkedList.print()
-print("Insert index at 2\n")
-linkedList.insert_at("INSERTED", 2)
-linkedList.print()
+stack = Stack()
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.print()
+popped = stack.pop()
+print(f"popped: {popped}")
+stack.print()

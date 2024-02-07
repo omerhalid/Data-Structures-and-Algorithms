@@ -37,27 +37,27 @@
 
 def quicksort(arr, left, right):
     if left < right:
-        pivot_index = partition(arr, left, right) # find pivot
-        quicksort(arr, left, pivot_index-1) # left sub-array
-        quicksort(arr, pivot_index+1, right) # right sub-array
-        
+        pivot = partition(arr, left, right)
+        quicksort(arr, left, pivot - 1)
+        quicksort(arr, pivot + 1, right)
+
 def partition(arr, left, right):
     i = left
     j = right - 1
-    pivot = arr[right] # pivot is the last element in the beginning
+    pivot = arr[right]
     
     while i <= j:
-        while i <= j and arr[i] < pivot: # find element on the left that should be on the right
+        while arr[i] < pivot:
             i += 1
-        while i <= j and arr[j] > pivot: # find element on the right that should be on the left
+        while arr[j] > pivot:
             j -= 1
-        if i <= j: # if i is less than or equal to j, swap the elements
-            arr[i], arr[j] = arr[j], arr[i] 
+        if i <= j:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+            j -= 1
     
     arr[i], arr[right] = arr[right], arr[i]
-        
     return i
-    
 
 
 data = [9,4,8, 1, 2, 10]

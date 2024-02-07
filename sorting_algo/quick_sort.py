@@ -1,4 +1,13 @@
 # Quick sort algorithm
+
+# Divide and conquer algorithm
+    # Breaks down a problem into smaller chunks
+    # Solutions to the sub-problems are then combined to give a solution to the original problem
+    
+# Run time depends on the pivot selection
+    # Best case: O(n log n)
+    # Worst case: O(n^2)
+
 # def quicksort(arr):
 #     if len(arr) <= 1:
 #         return arr

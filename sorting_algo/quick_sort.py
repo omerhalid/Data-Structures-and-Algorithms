@@ -36,14 +36,15 @@
 # print(quicksort([3,6,8,10,1,2,1]))
 
 def quicksort(arr, left, right):
-    if left < right:
+    if left<right:
         pivot = partition(arr, left, right)
         quicksort(arr, left, pivot - 1)
         quicksort(arr, pivot + 1, right)
-
+        
 def partition(arr, left, right):
     i = left
     j = right - 1
+    
     pivot = arr[right]
     
     while i <= j:
@@ -51,12 +52,14 @@ def partition(arr, left, right):
             i += 1
         while arr[j] > pivot:
             j -= 1
-        if i <= j:
+            
+        if i < j:
             arr[i], arr[j] = arr[j], arr[i]
             i += 1
             j -= 1
-    
+            
     arr[i], arr[right] = arr[right], arr[i]
+    
     return i
 
 
